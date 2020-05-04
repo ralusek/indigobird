@@ -1,6 +1,6 @@
-Much of the same functionality with `bluebird`, but where everything allows for concurrency and handlers.
+## Much of the same functionality as `bluebird`, except everything allows for concurrency and handlers.
 
-```
+```javascript
 const pendingPromises = []; // Imagine these were pending promises
 ```
 
@@ -16,15 +16,14 @@ Promise.map(
 ```
 
 In `indigobird`:
-```
+```javascript
 indigobird.all(pendingPromises);
 
 // But we can also add.
 indigobird.all(pendingPromises, { concurrency: 5 });
 ```
 Concurrency doesn't make any sense for already-resolving promises, but what if we didn't handle them yet?
-```
-
+```javascript
 indigobird.all(
   [ userA, userB, userC, userD, userE ],
   (userId) => getFromDB(userId),
@@ -35,7 +34,7 @@ So we've arrived at the same effect as `bluebird`'s `Promise.map`, which also of
 
 For example, improved `Promise.props`
 
-```
+```javascript
 // For example, here is a `Promise.props` equivalent, only we can provide
 // it with a handler function to allow it to manage concurrency.
 indigobird.props(
