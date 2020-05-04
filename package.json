@@ -1,0 +1,59 @@
+{
+  "name": "indigobird",
+  "version": "0.0.1",
+  "description": "A complement to bluebird which is also probably slightly better.",
+  "keywords": [
+    "bluebird",
+    "promise",
+    "promises",
+    "concurrency",
+    "map",
+    "forEach",
+    "simultaneous",
+    "parallel",
+    "some",
+    "any",
+    "all",
+    "partial",
+    "success",
+    "functional"
+  ],
+  "author": "Tomas Savigliano",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "files": [
+    "/lib"
+  ],
+  "scripts": {
+    "build": "npx ttsc",
+    "start": "npm run build",
+    "test": "npm run build && mocha -r ts-node/register tests/**/*.test.ts",
+    "prettify": "npx prettier --write '**/*.ts'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && npm run build"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "12.7.5",
+    "@types/uuid": "3.4.5",
+    "@types/validator": "10.11.3",
+    "bluebird": "3.7.2",
+    "chai": "4.2.0",
+    "husky": "4.2.5",
+    "mocha": "7.1.2",
+    "prettier": "2.0.5",
+    "pretty-quick": "2.0.1",
+    "ts-node": "^8.10.1",
+    "tslint": "5.20.1",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-plugin-prettier": "2.0.1",
+    "ttypescript": "^1.5.10",
+    "typescript": "3.8.3",
+    "typescript-transform-paths": "^1.1.14"
+  }
+}
