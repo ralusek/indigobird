@@ -5,7 +5,7 @@ const pendingPromises = []; // Imagine these were pending promises
 ```
 
 In `bluebird`:
-```
+```javascript
 Promise.all(pendingPromises);
 
 Promise.map(
