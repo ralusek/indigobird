@@ -1,11 +1,12 @@
 import 'mocha';
 import { expect } from 'chai';
 
-import { props } from '../../lib';
+import indigobird from '../../lib';
 
 describe('Invokation', () => {
   it('should be able to be executed.', () => {
-    return props({
+    console.log('indigobird', indigobird);
+    return indigobird.props({
       hey: 'sup',
     });
   });
