@@ -44,20 +44,18 @@ indigibird.any([
 ```
 
 ### Where it's NOT like bluebird
+Rather than just handing an array of promises, like `Promise.all` or bluebird's `.some`, all of these utilities can also be passed a handler argument
 ```javascript
-// Rather than just handing an array of promises, like Promise.all
-// or bluebird's .some, all of these utilities can also be passed
-// a handler argument. This then behaves like bluebird's .map, where
+// This then behaves like bluebird's .map, where
 // arguments in an array will be passed into an asynchronous handler,
 // and can therefore have their concurrency specified in the `concurrency`
 // argument.
 indigobird.some(userIds, (userId) => {
   return validateAndFetchUser(userId);
 }, { amount: 5, concurrency: 3});
-
-// Rather than invoking the functions at a given prop, we could, for
-// example, just pass them instead. Then we could invoke them in the
-// handler, and benefit from having control over concurrency.
+```
+Rather than invoking the functions at a given prop, we could, for example, just pass them instead. Then we could invoke them in the handler, and benefit from having control over concurrency.
+```javascript
 indigobird.props({
   head: getHeadAsync,
   shoulders: getShouldersAsync,
