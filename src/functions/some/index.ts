@@ -13,9 +13,18 @@ import sandbox from '@/utils/sandbox';
  */
 async function some<T extends any, I extends any>(
   items: I[],
-  handler?: IndigobirdSomeHandler<T, I> | null,
-  { amount = 1, concurrency = 1 }: IndigobirdSomeConfig = {}
+  handlerOrConfig?: IndigobirdSomeHandler<T, I> | IndigobirdSomeConfig | null,
+  configOr?: IndigobirdSomeConfig
 ): Promise<T[]> {
+  // Resolve ambiguous args
+  const handler: IndigobirdSomeHandler<T, I> | null = (handlerOrConfig && (typeof handlerOrConfig === 'function'))
+                                                      ? handlerOrConfig
+                                                      : null;
+  const config: IndigobirdSomeConfig | {} = (handler || configOr)
+                                            ? (configOr || {})
+                                            : (handlerOrConfig || {});
+
+  const { concurrency = 1, amount = 1 } = config as IndigobirdSomeConfig;
   if (!items.length) return [];
   if (concurrency < 1)
     return Promise.reject(new Error('Cannot execute indigobird.some, provided concurrency cannot be less than 1.'));
