@@ -10,7 +10,9 @@ Node Install:
 `$ npm install --save indigobird`
 
 Deno Install:
-`import indigobird from 'https://deno.land/x/indigobird/src/index.ts';`
+```javascript
+import indigobird from 'https://deno.land/x/indigobird/src/index.ts';
+```
 
 
 ### Where it's like bluebird:
