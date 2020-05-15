@@ -68,7 +68,7 @@ describe('Standard case: Amount', () => {
       { amount, concurrency }
     );
 
-    const resolved = results.reduce((total, result) => total + (result ? 1 : 0), 0);
+    const resolved = results.reduce((total: number, result) => total + (result ? 1 : 0), 0);
 
     expect(resolved).to.equal(amount);
     expect(errored).to.equal(amountToError);

@@ -12,4 +12,4 @@ export type IndigobirdSomeConfig = {
   amount?: number;
 };
 
-export type IndigobirdSomeHandler<T, I> = (currentItem: I, index: number) => T;
+export type IndigobirdSomeHandler<T, I> = (currentItem: I, index: number) => T | PromiseLike<T>;
