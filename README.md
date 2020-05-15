@@ -24,7 +24,7 @@ indigobird.some([
   doSomethingAsync(),
   doSomethingAsync(),
   doSomethingAsync(),
-], { amount: 2 });
+], null, { amount: 2 });
 
 // Like bluebird's .props, we resolve the promises at the keys'
 // values, and map them onto a result object with the same keys
