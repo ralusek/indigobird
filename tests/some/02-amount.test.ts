@@ -14,7 +14,7 @@ describe('Standard case: Amount', () => {
       (item) => {
         handled++;
       },
-      { amount }
+      { amount, concurrency: 1 }
     );
 
     expect(handled).to.equal(amount);

@@ -24,7 +24,7 @@ async function some<T extends any, I extends any>(
                                             ? (configOr || {})
                                             : (handlerOrConfig || {});
 
-  const { concurrency = 1, amount = 1 } = config as IndigobirdSomeConfig;
+  const { concurrency = Infinity, amount = items.length } = config as IndigobirdSomeConfig;
   if (!items.length) return [];
   if (concurrency < 1)
     return Promise.reject(new Error('Cannot execute indigobird.some, provided concurrency cannot be less than 1.'));
