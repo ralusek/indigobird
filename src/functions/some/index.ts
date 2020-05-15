@@ -13,7 +13,7 @@ import sandbox from '@/utils/sandbox';
  */
 async function some<T extends any, I extends any>(
   items: I[],
-  handler?: IndigobirdSomeHandler<T, I>,
+  handler?: IndigobirdSomeHandler<T, I> | null,
   { amount = 1, concurrency = 1 }: IndigobirdSomeConfig = {}
 ): Promise<T[]> {
   if (!items.length) return [];
