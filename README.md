@@ -44,7 +44,7 @@ indigibird.any([
 ```
 
 ### Where it's NOT like bluebird
-```
+```javascript
 // Rather than just handing an array of promises, like Promise.all
 // or bluebird's .some, all of these utilities can also be passed
 // a handler argument. This then behaves like bluebird's .map, where
