@@ -2,12 +2,15 @@
 [![npm version](https://img.shields.io/npm/v/indigobird.svg?style=flat)](https://www.npmjs.com/package/indigobird)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ralusek/indigobird/blob/master/LICENSE)
 
-## Much of the same functionality as `bluebird`, except everything allows for concurrency and handlers, as well as additional functionality, such as asynchronous `.reduce`.
+### What is indigobird?
+Much of the same functionality as `bluebird`, except everything allows for concurrency and handlers, as well as additional functionality, such as asynchronous `.reduce`.
 
+### Install
 Node Install:
 `$ npm install --save indigobird`
+
 Deno Install:
-`coming soon`
+`import indigobird from 'https://deno.land/x/indigobird/src/index.ts';`
 
 
 ### Where it's like bluebird:
