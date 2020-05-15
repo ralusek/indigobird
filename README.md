@@ -7,7 +7,9 @@ Much of the same functionality as `bluebird`, except everything allows for concu
 
 ### Install
 Node Install:
-`$ npm install --save indigobird`
+```bash
+$ npm install --save indigobird
+```
 
 Deno Install:
 ```javascript
