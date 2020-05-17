@@ -12,8 +12,8 @@ $ npm install --save indigobird
 ```
 
 Deno Install:
-```javascript
-import indigobird from 'https://deno.land/x/indigobird/src/index.ts';
+```
+// Coming soon
 ```
 
 
