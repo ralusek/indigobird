@@ -1,15 +1,15 @@
 // Types
-import { IndigobirdPropsConfig, IndigobirdPropsHandler } from './types';
+import { IndigobirdMapConfig, IndigobirdMapHandler } from './types';
 import { IndigobirdAllHandler } from '../all/types';
 
 // Functions
 import all from '../all';
 
-async function props<T extends { [key in K]: any }, I extends any, K extends string | number | symbol>(
+async function map<T, I extends any, K extends string | number | symbol>(
   items: { [key in K]: I },
-  handler?: IndigobirdPropsHandler<I, K>,
-  config: IndigobirdPropsConfig = {}
-): Promise<T> {
+  handler?: IndigobirdMapHandler<T, I, K>,
+  config: IndigobirdMapConfig = {}
+): Promise<{ [key in K]: T }> {
   const keys: K[] = Object.keys(items) as K[];
   const values = keys.reduce((arr: I[], key) => {
     arr.push(items[key]);
@@ -18,17 +18,17 @@ async function props<T extends { [key in K]: any }, I extends any, K extends str
 
   // Wrap the handler so as to pass in the corresponding key, rather
   // than the corresponding index.
-  const wrappedHandler: IndigobirdAllHandler<any, I> | undefined = handler
+  const wrappedHandler: IndigobirdAllHandler<T, I> | undefined = handler
     ? (item, index) => handler(item, keys[index])
     : undefined;
 
   const results = await all(values, wrappedHandler, config);
 
-  return results.reduce((agg: T, result, i) => {
+  return results.reduce((agg: { [key in K]: T }, result, i) => {
     const key = keys[i];
     agg[key] = result;
     return agg;
-  }, {});
+  }, {} as { [key in K]: T });
 }
 
-export default props;
+export default map;
