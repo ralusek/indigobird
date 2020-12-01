@@ -1,4 +1,4 @@
-export type IndigobirdPropsConfig = {
+export type IndigobirdMapConfig = {
   /**
    * The number of handlers that are able to be executed simultaneously.
    * Default = 1
@@ -6,4 +6,4 @@ export type IndigobirdPropsConfig = {
   concurrency?: number;
 };
 
-export type IndigobirdPropsHandler<I, K> = (currentItem: I, key: K) => any;
+export type IndigobirdMapHandler<T, I, K> = (currentItem: I, key: K) => T;

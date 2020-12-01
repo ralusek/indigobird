@@ -1,5 +1,7 @@
 // Types
 import { IndigobirdSomeConfig, IndigobirdSomeHandler } from './types';
+
+// Utils
 import sandbox from '@/utils/sandbox';
 
 /**
