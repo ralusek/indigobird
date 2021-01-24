@@ -6,4 +6,7 @@ export type IndigobirdPropsConfig = {
   concurrency?: number;
 };
 
-export type IndigobirdPropsHandler<I, K> = (currentItem: I, key: K) => any;
+export type IndigobirdPropsHandler<I, K> = {
+  (currentItem: I, key: K): PromiseLike<any>;
+  (currentItem: I, key: K): any;
+}

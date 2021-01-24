@@ -19,7 +19,7 @@ async function map<T, I extends any, K extends string | number | symbol>(
   // Wrap the handler so as to pass in the corresponding key, rather
   // than the corresponding index.
   const wrappedHandler: IndigobirdAllHandler<T, I> | undefined = handler
-    ? (item, index) => handler(item, keys[index])
+    ? (item: I, index: number) => handler(item, keys[index])
     : undefined;
 
   const results = await all(values, wrappedHandler, config);
