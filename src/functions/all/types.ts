@@ -6,4 +6,4 @@ export type IndigobirdAllConfig = {
   concurrency?: number;
 };
 
-export type IndigobirdAllHandler<T, I> = (currentItem: I, index: number) => T;
+export type IndigobirdAllHandler<T, I> = (currentItem: I, index: number) => T | PromiseLike<T>;

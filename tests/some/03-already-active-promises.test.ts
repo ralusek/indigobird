@@ -11,25 +11,25 @@ describe('Active promises', () => {
         new Promise((resolve) =>
           setTimeout(() => {
             resolved++;
-            resolve();
+            resolve(null);
           }, 15)
         ),
         new Promise((resolve) =>
           setTimeout(() => {
             resolved++;
-            resolve();
+            resolve(null);
           }, 30)
         ),
         new Promise((resolve) =>
           setTimeout(() => {
             resolved++;
-            resolve();
+            resolve(null);
           }, 30)
         ),
         new Promise((resolve) =>
           setTimeout(() => {
             resolved++;
-            resolve();
+            resolve(null);
           }, 45)
         ),
       ],
@@ -48,25 +48,25 @@ describe('Active promises', () => {
         new Promise((resolve) =>
           setTimeout(() => {
             resolved++;
-            resolve();
+            resolve(null);
           }, 15)
         ),
         new Promise((resolve) =>
           setTimeout(() => {
             resolved++;
-            resolve();
+            resolve(null);
           }, 30)
         ),
         new Promise((resolve) =>
           setTimeout(() => {
             resolved++;
-            resolve();
+            resolve(null);
           }, 30)
         ),
         new Promise((resolve) =>
           setTimeout(() => {
             resolved++;
-            resolve();
+            resolve(null);
           }, 45)
         ),
       ],
