@@ -6,4 +6,4 @@ export type IndigobirdMapConfig = {
   concurrency?: number;
 };
 
-export type IndigobirdMapHandler<T, I, K> = (currentItem: I, key: K) => T | PromiseLike<T>;
+export type IndigobirdMapHandler<T, O, K extends keyof O> = (currentItem: O[K], key: K) => T | PromiseLike<T>;
