@@ -1,6 +1,6 @@
 {
   "name": "indigobird",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A complement to bluebird which is also probably slightly better.",
   "keywords": [
     "bluebird",
@@ -35,7 +35,9 @@
       "pre-commit": "pretty-quick --staged && npm run build"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
   "devDependencies": {
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
