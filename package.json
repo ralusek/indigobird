@@ -1,6 +1,6 @@
 {
   "name": "indigobird",
-  "version": "0.3.1",
+  "version": "1.0.0",
   "description": "A complement to bluebird which is also probably slightly better.",
   "keywords": [
     "bluebird",
@@ -25,17 +25,15 @@
     "/lib"
   ],
   "scripts": {
-    "build": "npx ttsc",
+    "build": "npx tspc",
     "start": "npm run build",
-    "test": "npm run build && mocha -r ts-node/register tests/**/*.test.ts",
-    "prettify": "npx prettier --write '**/*.ts'"
+    "test": "npm run build && mocha -r ts-node/register tests/**/*.test.ts"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run build"
+      "pre-commit": "npm run build"
     }
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
@@ -46,14 +44,10 @@
     "chai": "4.2.0",
     "husky": "4.2.5",
     "mocha": "7.1.2",
-    "prettier": "2.0.5",
-    "pretty-quick": "2.0.1",
-    "ts-node": "^8.10.1",
-    "tslint": "5.20.1",
-    "tslint-config-prettier": "1.18.0",
-    "tslint-plugin-prettier": "2.0.1",
-    "ttypescript": "^1.5.10",
-    "typescript": "^3.9.2",
-    "typescript-transform-paths": "^1.1.14"
+    "ts-node": "^10.9.2",
+    "ts-patch": "^3.1.1",
+    "tslint": "^6.1.3",
+    "typescript": "^5.3.3",
+    "typescript-transform-paths": "^3.4.6"
   }
 }

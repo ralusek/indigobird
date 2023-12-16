@@ -8,7 +8,7 @@ async function any<T, I extends any>(
   items: I[],
   handlerOrConfig?: IndigobirdAnyHandler<T, I> | IndigobirdAnyConfig | null,
   configOr?: IndigobirdAnyConfig
-): Promise<T[]> {
+): Promise<T> {
   // Resolve ambiguous args
   const handler: IndigobirdAnyHandler<T, I> | null = (handlerOrConfig && (typeof handlerOrConfig === 'function'))
                                                       ? handlerOrConfig
@@ -16,10 +16,12 @@ async function any<T, I extends any>(
   const config: IndigobirdAnyConfig | {} = (handler || configOr)
                                             ? (configOr || {})
                                             : (handlerOrConfig || {});
-  return some(items, handler, {
+  const result = await some(items, handler, {
     ...config,
     amount: 1,
   });
+
+  return result.find(item => item !== undefined)!;
 }
 
 export default any;
